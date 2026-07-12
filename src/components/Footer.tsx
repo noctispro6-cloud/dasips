@@ -1,11 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
+import { SITE } from "@/lib/site";
 
 const columns = [
   {
     heading: "Company",
     links: [
       { href: "/about", label: "About Us" },
+      { href: "/services", label: "Services" },
       { href: "/properties", label: "Properties" },
       { href: "/contact", label: "Contact" },
     ],
@@ -13,10 +15,10 @@ const columns = [
   {
     heading: "Services",
     links: [
-      { href: "/properties", label: "Residential Sales" },
-      { href: "/properties", label: "Commercial Leasing" },
-      { href: "/contact", label: "Property Management" },
-      { href: "/contact", label: "Investment Advisory" },
+      { href: "/services", label: "Property Management" },
+      { href: "/services", label: "Land Consultancy" },
+      { href: "/services", label: "Road Construction" },
+      { href: "/services", label: "Drainage Works" },
     ],
   },
 ];
@@ -33,10 +35,10 @@ export default function Footer() {
                 Dasips
               </span>
             </div>
-            <p className="mt-4 max-w-xs text-sm leading-6 text-foreground/60">
-              Exceptional properties. Enduring value. Dasips Ventures Limited
-              curates premium real estate opportunities for discerning
-              clients.
+            <p className="mt-4 max-w-xs text-sm leading-6 text-white/60">
+              {SITE.tagline} Dasips Ventures Limited delivers property
+              management, land consultancy, road construction, and drainage
+              works across Kenya.
             </p>
           </div>
 
@@ -50,7 +52,7 @@ export default function Footer() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-sm text-foreground/60 transition-colors hover:text-gold-400"
+                      className="text-sm text-white/60 transition-colors hover:text-gold-400"
                     >
                       {link.label}
                     </Link>
@@ -64,26 +66,28 @@ export default function Footer() {
             <h3 className="font-serif text-sm uppercase tracking-[0.15em] text-gold-400">
               Contact
             </h3>
-            <ul className="mt-4 space-y-3 text-sm text-foreground/60">
-              <li>Kilimani, Nairobi, Kenya</li>
+            <ul className="mt-4 space-y-3 text-sm text-white/60">
+              <li>{SITE.address}</li>
+              {SITE.phones.map((phone, i) => (
+                <li key={phone}>
+                  <a href={`tel:${SITE.phoneHrefs[i]}`} className="hover:text-gold-400">
+                    {phone}
+                  </a>
+                </li>
+              ))}
               <li>
-                <a href="tel:+254700000000" className="hover:text-gold-400">
-                  +254 700 000 000
-                </a>
-              </li>
-              <li>
-                <a href="mailto:info@dasips.com" className="hover:text-gold-400">
-                  info@dasips.com
+                <a href={`mailto:${SITE.email}`} className="hover:text-gold-400">
+                  {SITE.email}
                 </a>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-gold-500/10 pt-8 text-xs text-foreground/40 sm:flex-row">
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-gold-500/10 pt-8 text-xs text-white/40 sm:flex-row">
           <p>&copy; {new Date().getFullYear()} Dasips Ventures Limited. All rights reserved.</p>
           <p className="font-serif italic tracking-wide text-gold-500/70">
-            Exceptional Properties. Enduring Value.
+            {SITE.tagline}
           </p>
         </div>
       </div>

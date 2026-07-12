@@ -6,6 +6,7 @@ import { useState } from "react";
 
 const links = [
   { href: "/", label: "Home" },
+  { href: "/services", label: "Services" },
   { href: "/properties", label: "Properties" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
@@ -15,7 +16,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-gold-500/20 bg-navy-950/85 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-navy-100 bg-background/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
         <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
           <Image
@@ -36,7 +37,7 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium tracking-wide text-gold-300/80 transition-colors hover:text-gold-400"
+              className="text-sm font-medium tracking-wide text-navy-800/80 transition-colors hover:text-gold-600"
             >
               {link.label}
             </Link>
@@ -45,14 +46,14 @@ export default function Navbar() {
 
         <Link
           href="/contact"
-          className="hidden rounded-full border border-gold-500/60 px-5 py-2 text-sm font-medium tracking-wide text-gold-400 transition-colors hover:bg-gold-500 hover:text-navy-950 md:inline-block"
+          className="hidden rounded-full border border-gold-600/60 px-5 py-2 text-sm font-medium tracking-wide text-gold-700 transition-colors hover:bg-gold-500 hover:text-navy-950 md:inline-block"
         >
           Book a Consultation
         </Link>
 
         <button
           type="button"
-          className="text-gold-400 md:hidden"
+          className="text-navy-800 md:hidden"
           onClick={() => setOpen((v) => !v)}
           aria-label="Toggle menu"
           aria-expanded={open}
@@ -68,13 +69,13 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <nav className="flex flex-col gap-1 border-t border-gold-500/20 bg-navy-950 px-6 py-4 md:hidden">
+        <nav className="flex flex-col gap-1 border-t border-navy-100 bg-background px-6 py-4 md:hidden">
           {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="rounded-lg px-3 py-2 text-sm font-medium text-gold-300/90 hover:bg-navy-800 hover:text-gold-400"
+              className="rounded-lg px-3 py-2 text-sm font-medium text-navy-800/90 hover:bg-navy-50 hover:text-gold-600"
             >
               {link.label}
             </Link>
@@ -82,7 +83,7 @@ export default function Navbar() {
           <Link
             href="/contact"
             onClick={() => setOpen(false)}
-            className="mt-2 rounded-full border border-gold-500/60 px-3 py-2 text-center text-sm font-medium text-gold-400 hover:bg-gold-500 hover:text-navy-950"
+            className="mt-2 rounded-full border border-gold-600/60 px-3 py-2 text-center text-sm font-medium text-gold-700 hover:bg-gold-500 hover:text-navy-950"
           >
             Book a Consultation
           </Link>

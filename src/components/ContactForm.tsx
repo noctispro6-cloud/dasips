@@ -3,7 +3,7 @@
 import { useState, type FormEvent } from "react";
 
 const inputClasses =
-  "w-full rounded-lg border border-gold-500/20 bg-navy-800/60 px-4 py-3 text-sm text-foreground placeholder:text-foreground/30 focus:border-gold-500/60 focus:outline-none";
+  "w-full rounded-lg border border-navy-100 bg-navy-50 px-4 py-3 text-sm text-foreground placeholder:text-foreground/40 focus:border-gold-500/60 focus:outline-none";
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
@@ -15,7 +15,7 @@ export default function ContactForm() {
 
   if (submitted) {
     return (
-      <div className="mt-6 rounded-2xl border border-gold-500/30 bg-navy-800/60 p-8 text-center">
+      <div className="mt-6 rounded-2xl border border-gold-500/30 bg-navy-50 p-8 text-center">
         <p className="font-serif text-xl text-gradient-gold">Thank you</p>
         <p className="mt-2 text-sm leading-6 text-foreground/60">
           Your message has been received. A member of our team will be in
@@ -38,7 +38,7 @@ export default function ContactForm() {
         <input
           type="tel"
           name="phone"
-          placeholder="Phone Number"
+          placeholder="Phone Number (optional)"
           className={inputClasses}
         />
       </div>

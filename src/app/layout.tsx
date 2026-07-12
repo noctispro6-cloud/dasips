@@ -4,9 +4,9 @@ import Footer from "@/components/Footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Dasips Ventures Limited | Exceptional Properties. Enduring Value.",
+  title: "Dasips Ventures Limited | Exceptional Property. Enduring Legacy.",
   description:
-    "Dasips Ventures Limited is a real estate company specializing in exceptional properties and enduring value for discerning clients.",
+    "Dasips Ventures Limited specializes in property management, land consultancy, road construction, and drainage works.",
 };
 
 export default function RootLayout({
@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full antialiased">
-      <body className="min-h-full flex flex-col bg-navy-900 text-foreground font-sans">
+      <body className="min-h-full flex flex-col bg-background text-foreground font-sans">
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
