@@ -7,5 +7,4 @@ export const SITE = {
   lat: -0.531,
   lon: 37.45,
   tagline: "Exceptional Property. Enduring Legacy.",
-  headline: ["Building Value.", "Delivering Excellence."],
 };

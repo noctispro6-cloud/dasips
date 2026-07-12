@@ -28,17 +28,13 @@ export default function Home() {
           <p className="mt-8 text-xs uppercase tracking-[0.4em] text-gold-600">
             Dasips Ventures Limited
           </p>
-          <h1 className="mt-6 max-w-3xl font-serif text-4xl leading-tight text-navy-950 sm:text-5xl lg:text-6xl">
-            {SITE.headline[0]}{" "}
-            <span className="text-gradient-gold">{SITE.headline[1]}</span>
-          </h1>
-          <p className="mt-6 max-w-xl font-serif text-lg italic text-navy-700/80">
+          <div className="mt-8 flex items-center gap-3">
+            <span className="h-px w-12 bg-gradient-to-r from-transparent to-gold-500/70" />
+            <span className="h-1.5 w-1.5 rotate-45 bg-gold-500" />
+            <span className="h-px w-12 bg-gradient-to-l from-transparent to-gold-500/70" />
+          </div>
+          <p className="mt-6 max-w-2xl text-gradient-gold font-serif text-2xl italic leading-snug tracking-wide sm:text-3xl">
             {SITE.tagline}
-          </p>
-          <p className="mt-4 max-w-xl text-base leading-7 text-foreground/60">
-            A dynamic and innovative company specializing in property
-            management, land consultancy, road construction, and drainage
-            works &mdash; delivering solutions that add value to communities.
           </p>
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
             <Link
