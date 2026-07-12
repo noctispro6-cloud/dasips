@@ -44,4 +44,8 @@ export const whyChooseUs = [
   "Safety & Compliance",
 ];
 
-export const partners = ["CRBC", "China Wu Yi", "KURA"];
+export const partners = [
+  { name: "CRBC", logo: "/partners/crbc.png" },
+  { name: "China Wu Yi", logo: "/partners/china-wu-yi.png" },
+  { name: "KURA", logo: "/partners/kura.png" },
+];

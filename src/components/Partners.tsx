@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { partners } from "@/lib/values";
 import { notableProjects } from "@/lib/projects";
 
@@ -15,12 +16,18 @@ export default function Partners() {
         </p>
 
         <div className="mx-auto mt-10 flex flex-wrap items-center justify-center gap-6">
-          {partners.map((name) => (
+          {partners.map((partner) => (
             <div
-              key={name}
-              className="flex h-20 min-w-[180px] items-center justify-center rounded-xl border border-navy-100 bg-white px-8 font-serif text-lg tracking-wide text-foreground/80 shadow-sm"
+              key={partner.name}
+              className="flex h-20 min-w-[180px] items-center justify-center rounded-xl border border-navy-100 bg-white px-8 shadow-sm"
             >
-              {name}
+              <Image
+                src={partner.logo}
+                alt={partner.name}
+                width={120}
+                height={60}
+                className="h-14 w-auto object-contain"
+              />
             </div>
           ))}
         </div>
